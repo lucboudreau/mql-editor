@@ -206,6 +206,9 @@ public class MQLEditorServiceCWMDelegate {
       case DataTypeSettings.DATA_TYPE_DATE:
         ourType = ColumnType.DATE;
         break;
+      case DataTypeSettings.DATA_TYPE_TIMESTAMP:
+        ourType = ColumnType.TIMESTAMP;
+        break;
     }
     col.setType( ourType );
     List<AggregationSettings> possibleAggs = c.getAggregationList();
@@ -246,6 +249,9 @@ public class MQLEditorServiceCWMDelegate {
           break;
         case DataTypeSettings.DATA_TYPE_DATE:
           ourType = ColumnType.DATE;
+          break;
+        case DataTypeSettings.DATA_TYPE_TIMESTAMP:
+          ourType = ColumnType.TIMESTAMP;
           break;
       }
     }
@@ -453,6 +459,8 @@ public class MQLEditorServiceCWMDelegate {
         return DataType.BOOLEAN;
       case DATE:
         return DataType.DATE;
+      case TIMESTAMP:
+        return DataType.TIMESTAMP;
       case FLOAT:
       case NUMERIC:
         return DataType.NUMERIC;

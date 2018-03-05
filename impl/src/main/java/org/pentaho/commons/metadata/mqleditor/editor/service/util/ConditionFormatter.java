@@ -12,7 +12,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
  *
- * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
+ * Copyright (c) 2002-2018 Hitachi Vantara. All rights reserved.
  */
 
 package org.pentaho.commons.metadata.mqleditor.editor.service.util;
@@ -51,7 +51,9 @@ public class ConditionFormatter {
     String val = c.getValue();
 
     // Date is a special case where we craft a formula function.
-    if ( c.getColumn().getType() == ColumnType.DATE ) {
+    if ( ( c.getColumn().getType() == ColumnType.DATE )
+        || ( c.getColumn().getType() == ColumnType.TIMESTAMP ) )
+    {
       if ( c.isParameterized() && enforceParameters ) {
         // Due to the fact that the value of a Date is a forumula function, the tokenizing of
         // the value needs to happen here instead of letting the Operator class handle it.

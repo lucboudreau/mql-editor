@@ -12,7 +12,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
  *
- * Copyright (c) 2002-2017 Hitachi Vantara..  All rights reserved.
+ * Copyright (c) 2002-2018 Hitachi Vantara. All rights reserved.
  */
 
 package org.pentaho.commons.metadata.mqleditor;
@@ -25,7 +25,12 @@ import java.sql.Date;
  *
  */
 public enum ColumnType implements Serializable {
-  NUMERIC( Integer.class ), TEXT( String.class ), FLOAT( Float.class ), BOOLEAN( Boolean.class ), DATE( Date.class );
+  NUMERIC( Integer.class ),
+  TEXT( String.class ),
+  FLOAT( Float.class ),
+  BOOLEAN( Boolean.class ),
+  DATE( Date.class ),
+  TIMESTAMP( Date.class );
 
   private final Class clazz;
 

@@ -12,7 +12,7 @@
  * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU Lesser General Public License for more details.
  *
- * Copyright (c) 2002-2018 Hitachi Vantara..  All rights reserved.
+ * Copyright (c) 2002-2018 Hitachi Vantara. All rights reserved.
  */
 
 package org.pentaho.commons.metadata.mqleditor.editor.service.util;
@@ -215,6 +215,9 @@ public class MQLEditorServiceDelegate {
       case DataTypeSettings.DATA_TYPE_DATE:
         ourType = ColumnType.DATE;
         break;
+      case DataTypeSettings.DATA_TYPE_TIMESTAMP:
+        ourType = ColumnType.TIMESTAMP;
+        break;
     }
     col.setType( ourType );
     List<AggregationSettings> possibleAggs = c.getAggregationList();
@@ -255,6 +258,9 @@ public class MQLEditorServiceDelegate {
           break;
         case DataTypeSettings.DATA_TYPE_DATE:
           ourType = ColumnType.DATE;
+          break;
+        case DataTypeSettings.DATA_TYPE_TIMESTAMP:
+          ourType = ColumnType.TIMESTAMP;
           break;
       }
     }
@@ -478,6 +484,7 @@ public class MQLEditorServiceDelegate {
       case BOOLEAN:
         return DataType.BOOLEAN;
       case DATE:
+      case TIMESTAMP:
         // As we are crafting an open formula function to handle dates, the parameter data type needs to be a String.
         // This will eventually be handled by the Metadata layer.
         return DataType.STRING;
